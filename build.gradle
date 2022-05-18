@@ -24,7 +24,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${version}")
-
+    testImplementation group: 'com.h2database', name: 'h2', version: '2.1.210'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
