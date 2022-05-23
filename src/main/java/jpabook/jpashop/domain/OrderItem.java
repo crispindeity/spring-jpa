@@ -54,7 +54,7 @@ public class OrderItem {
     }
 
     //조회 로직
-  직 public int getTotalPrice() {
+    public int getTotalPrice() {
         return this.orderPrice * this.count;
     }
 }
