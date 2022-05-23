@@ -2,8 +2,6 @@ package jpabook.jpashop.repository;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 
 import jpabook.jpashop.domain.Order;
