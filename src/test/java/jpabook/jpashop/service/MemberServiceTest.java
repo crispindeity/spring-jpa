@@ -16,7 +16,6 @@ import jpabook.jpashop.repository.MemberRepository;
 
 @SpringBootTest
 @Transactional
-@ActiveProfiles("local")
 class MemberServiceTest {
 
     @Autowired

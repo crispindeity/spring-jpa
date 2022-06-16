@@ -11,7 +11,6 @@ import javax.persistence.EntityManager;
 import jpabook.jpashop.domain.item.Book;
 
 @SpringBootTest
-@ActiveProfiles("local")
 class ItemUpdateTest {
 
     @Autowired

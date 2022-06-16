@@ -23,7 +23,6 @@ import jpabook.jpashop.repository.OrderRepository;
 
 @SpringBootTest
 @Transactional
-@ActiveProfiles("local")
 class OrderServiceTest {
 
     @Autowired
