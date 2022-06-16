@@ -4,13 +4,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import javax.persistence.EntityManager;
 
 import jpabook.jpashop.domain.item.Book;
 
 @SpringBootTest
-public class ItemUpdateTest {
+@ActiveProfiles("local")
+class ItemUpdateTest {
 
     @Autowired
     EntityManager entityManager;
