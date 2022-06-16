@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    default: dev
   datasource:
     url: jdbc:mysql://localhost:3306/jpadb;
     driver-class-name: com.mysql.cj.jdbc.Driver
