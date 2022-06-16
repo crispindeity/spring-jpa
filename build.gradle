@@ -44,3 +44,32 @@ bootJar {
     archiveFileName = 'app.jar'
     archiveVersion = "0.0.0"
 }
+
+test {
+
+    gradle.taskGraph.beforeTask { Task task ->
+        if (task.name == "test") {
+
+            println "========================== Gradle Log ==============================="
+            println "Are the test cycles being performed during the build?: ${tasks.getByName("assemble").state.executed}"
+            println "====================================================================="
+
+            var isBuild = tasks.getByName("assemble").state.executed
+
+            switch (isBuild) {
+                case true:
+                    doFirst {
+                        systemProperty('spring.profiles.active', 'default')
+                    }
+                    break
+                case false:
+                    doFirst {
+                        systemProperty('spring.profiles.active', 'local')
+                    }
+                    break
+            }
+        }
+    }
+
+    useJUnitPlatform()
+}
