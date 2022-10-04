@@ -67,6 +67,14 @@ public class OrderApiController {
         }
     }
 
+    @GetMapping("/api/v3/orders")
+    public List<OrderDto> ordersV3() {
+        return orderRepository.findAllWithItem()
+                .stream()
+                .map(OrderDto::new)
+                .collect(toList());
+    }
+
     @Getter
     static class OrderItemDtos {
 
