@@ -104,10 +104,10 @@ public class OrderRepository {
 
     public List<Order> findAllWithMemberDelivery() {
         return entityManager.createQuery(
-                "SELECT o FROM Order o" +
-                        " JOIN FETCH o.member m" +
-                        " JOIN FETCH o.delivery d", Order.class
-        ).getResultList();
+                        "SELECT o FROM Order o" +
+                                " JOIN FETCH o.member m" +
+                                " JOIN FETCH o.delivery d", Order.class)
+                .getResultList();
     }
 
     public List<Order> findAllWithItem() {
@@ -118,5 +118,15 @@ public class OrderRepository {
                         " JOIN FETCH o.orderItems oi" +
                         " JOIN FETCH oi.item i", Order.class
         ).getResultList();
+    }
+
+    public List<Order> findAllWithMemberDelivery(int offset, int limit) {
+        return entityManager.createQuery(
+                        "SELECT o FROM Order o" +
+                                " JOIN FETCH o.member m" +
+                                " JOIN FETCH o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
     }
 }
