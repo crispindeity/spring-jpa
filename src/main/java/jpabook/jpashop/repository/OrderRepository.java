@@ -16,6 +16,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.repository.order.query.OrderQueryDto;
 
 @Repository
 public class OrderRepository {
